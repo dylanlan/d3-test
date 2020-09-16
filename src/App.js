@@ -8,6 +8,7 @@ function App() {
         <div className="App">
             <header className="App-header">
                 <BarChart />
+                <button id="download">Download</button>
             </header>
         </div>
     );
