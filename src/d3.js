@@ -31,7 +31,7 @@ export function applyD3(data) {
     // X axis
     var x = d3.scaleBand()
         .range([0, width])
-        .domain(data.map(function (d) { return d.Name; }))
+        .domain(data.map(function (d) { return d.name; }))
         .padding(0.2);
     svg.append("g")
         .attr("transform", "translate(0," + height + ")")
@@ -77,10 +77,10 @@ export function applyD3(data) {
         .data(data)
         .enter()
         .append("rect")
-        .attr("x", function (d) { return x(d.Name); })
-        .attr("y", function (d) { return y(d.Value); })
+        .attr("x", function (d) { return x(d.name); })
+        .attr("y", function (d) { return y(d.value); })
         .attr("width", x.bandwidth())
-        .attr("height", function (d) { return height - y(d.Value); })
+        .attr("height", function (d) { return height - y(d.value); })
         .attr("fill", "#228B22")
 
     d3.select(downloadButtonID)
