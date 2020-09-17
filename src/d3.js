@@ -18,6 +18,8 @@ export function applyD3(data) {
     const minY = 0;
     const maxY = 13000;
 
+    d3.select("svg").remove();
+
     // append the svg object to the body of the page
     var svg = d3.select(chartID)
         .append("svg")
