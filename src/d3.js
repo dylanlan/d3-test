@@ -3,7 +3,12 @@ import { saveSvgAsPng } from 'save-svg-as-png';
 
 // mostly copied from https://www.d3-graph-gallery.com/graph/barplot_basic.html
 
-export function applyD3(data) {
+export function applyD3(data, labels) {
+    const {
+        title,
+        xAxis,
+        yAxis,
+    } = labels;
     // set the dimensions and margins of the graph
     const margin = {
         top: 60,
@@ -47,7 +52,7 @@ export function applyD3(data) {
         .attr("transform", "translate(" + (width/2) + " ," + (height + margin.top + 10) + ")")
         .style("text-anchor", "middle")
         .style("font-size", "24px")
-        .text("X-Axis")
+        .text(xAxis)
 
     // Add Y axis
     var y = d3.scaleLinear()
@@ -64,7 +69,7 @@ export function applyD3(data) {
         .attr("dy", "1em")
         .style("text-anchor", "middle")
         .style("font-size", "24px")
-        .text("Y Axis");
+        .text(yAxis);
 
     svg.append("text")
         .attr("x", (width / 2))             
@@ -72,7 +77,7 @@ export function applyD3(data) {
         .attr("text-anchor", "middle")  
         .style("font-size", "32px") 
         .style("text-decoration", "underline")  
-        .text("Title");
+        .text(title);
 
     // Bars
     svg.selectAll("mybar")
@@ -88,6 +93,6 @@ export function applyD3(data) {
     d3.select(downloadButtonID)
         .on('click', function(){
             // Get the d3js SVG element and save using saveSvgAsPng.js
-            saveSvgAsPng(document.getElementsByTagName("svg")[0], "plot.png", {scale: 2, backgroundColor: "#FFFFFF"});
+            saveSvgAsPng(document.getElementsByTagName("svg")[0], `${title}.png`, {scale: 2, backgroundColor: "#FFFFFF"});
         })
 }

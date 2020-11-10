@@ -49,6 +49,6 @@
   fill: black;
 }
 
-label {
-  color: black;
+input {
+  margin-right: 3rem;
 }
