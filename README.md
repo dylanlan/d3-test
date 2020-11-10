@@ -1,3 +1,17 @@
+# D3 Test
+
+This react app is just for testing how to make D3 Charts.
+It currently supports:
+* choosing a CSV file containing data to display in a bar chart
+* configuring title, x-axis, and y-axis
+* downloading the chart as png
+
+
+It currently looks like this:
+
+
+![Current UI](/public/example-screenshot.png)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
