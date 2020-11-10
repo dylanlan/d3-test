@@ -48,3 +48,7 @@
 .axisBlack text {
   fill: black;
 }
+
+label {
+  color: black;
+}
